@@ -18,12 +18,14 @@
             // Add custom user claims here
             return userIdentity;
         }
-
+        
+        private ICollection<Medical> medicals { get; set; }
         private ICollection<Patient> patients { get; set; }
 
         public User()
         {
             this.patients = new HashSet<Patient>();
+            this.medicals = new HashSet<Medical>();
         }
 
         [Required]
@@ -42,10 +44,16 @@
         [StringLength(30, MinimumLength = 3)]
         public string Speciality { get; set; }
 
-        public ICollection<Patient> Patients
+        public virtual ICollection<Patient> Patients
         {
             get { return this.patients; }
             set { this.patients = value; }
+        }
+
+        public virtual ICollection<Medical> Medicals
+        {
+            get { return this.medicals; }
+            set { this.medicals = value; }
         }
     }
 }

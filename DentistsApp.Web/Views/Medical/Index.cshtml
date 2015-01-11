@@ -5,11 +5,11 @@
 
 @(Html.Grid(Model).Named("Medicals").Columns(columns =>
     {
-        columns.Add(c => c.PatientName).Titled("Пациент");
-        columns.Add(c => c.DentistName).Titled("Зъболекар");
-        columns.Add(c => c.Diagnosis).Titled("Диагноза");
-        columns.Add(c => c.ToothDesctiption).Titled("Описание на зъба");
-        columns.Add(c => c.Treatment).Titled("Лечение");
+        columns.Add(c => c.PatientName).Titled("Пациент").SetWidth(200).Css("grid-cell");
+        columns.Add(c => c.DentistName).Titled("Зъболекар").SetWidth(200).Css("grid-cell");
+        columns.Add(c => c.Diagnosis).Titled("Диагноза").SetWidth(200).Css("grid-cell");
+        columns.Add(c => c.ToothDesctiption).Titled("Описание на зъба").SetWidth(200).Css("grid-cell");
+        columns.Add(c => c.Treatment).Titled("Лечение").SetWidth(200).Css("grid-cell");
     })
     .WithPaging(10)
     .Sortable(true)

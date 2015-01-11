@@ -5,10 +5,10 @@
 
 @(Html.Grid(Model).Columns(columns =>
     {
-        columns.Add(c => c.FullName).Titled("Име");
-        columns.Add(c => c.PatientNumber).Titled("Номер на пациент");
-        columns.Add(c => c.PhoneNumber).Titled("Телефонен номер");
-        columns.Add(c => c.Address).Titled("Адрес");
+        columns.Add(c => c.FullName).Titled("Име").SetWidth(300).Css("grid-cell");
+        columns.Add(c => c.PatientNumber).Titled("Номер на пациент").SetWidth(200).Css("grid-cell");
+        columns.Add(c => c.PhoneNumber).Titled("Телефонен номер").SetWidth(200).Css("grid-cell");
+        columns.Add(c => c.Address).Titled("Адрес").SetWidth(300).Css("grid-cell");
     })
     .WithPaging(10)
     .Sortable(true)

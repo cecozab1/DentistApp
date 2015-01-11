@@ -19,3 +19,7 @@
 #create-btns-container input{
     margin-right: 20px;
 }
+
+.grid-cell {
+    word-break: break-word;
+}
