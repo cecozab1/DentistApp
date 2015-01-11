@@ -1,0 +1,67 @@
+﻿@using DentistsApp.Web.ViewModels.Medical
+
+@model MedicalCreateViewModel
+
+<div class="container">
+    @using (Html.BeginForm("Create", "Medical", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken();
+
+        <br />
+        <br />
+        <div class="row">
+            <div class="col-md-3 text-right">
+                @Html.LabelFor(m => m.ToothDesctiption)
+            </div>
+            <div class="col-md-9">
+                @Html.TextBoxFor(m => m.ToothDesctiption, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.ToothDesctiption)
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-md-3 text-right">
+                @Html.LabelFor(m => m.Diagnosis)
+            </div>
+            <div class="col-md-9">
+                @Html.TextBoxFor(m => m.Diagnosis, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Diagnosis)
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-md-3 text-right">
+                @Html.LabelFor(m => m.Treatment)
+            </div>
+            <div class="col-md-9">
+                @Html.TextBoxFor(m => m.Treatment, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Treatment)
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-md-3 text-right">
+                @Html.LabelFor(m => m.UserId)
+            </div>
+            <div class="col-md-9">
+                @Html.DropDownListFor(m => m.UserId, (SelectList)ViewBag.DentistsDropDownList, new { @class = "form-control" })
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-md-3 text-right">
+                @Html.LabelFor(m => m.PatientId)
+            </div>
+            <div class="col-md-9">
+                @Html.DropDownListFor(m => m.PatientId, (SelectList)ViewBag.PatientsDropDownList, new { @class = "form-control" })
+            </div>
+        </div>
+        <br />
+        <div id="creatе-btns-container" class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <input type="submit" class="btn btn-primary pull-right" value="Добави диагноза и лечение" />
+                <input type="reset" class="btn btn-danger pull-right" value="Изчисти" />
+            </div>
+        </div>
+    }
+</div>

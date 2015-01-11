@@ -1,0 +1,16 @@
+﻿@using DentistsApp.Web.ViewModels.Patient
+@using GridMvc.Html
+
+@model IQueryable<PatientListViewModel>
+
+@(Html.Grid(Model).Columns(columns =>
+    {
+        columns.Add(c => c.FullName).Titled("Име");
+        columns.Add(c => c.PatientNumber).Titled("Номер на пациент");
+        columns.Add(c => c.PhoneNumber).Titled("Телефонен номер");
+        columns.Add(c => c.Address).Titled("Адрес");
+    })
+    .WithPaging(10)
+    .Sortable(true)
+    .WithMultipleFilters()
+)

@@ -1,0 +1,79 @@
+﻿@using DentistsApp.Web.ViewModels.Patient
+
+@model PatientCreateViewModel
+
+<div class="container">
+    @using (Html.BeginForm("Create", "Patient", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken();
+
+        <br />
+        <br />
+        <div class="row">
+            <div class="col-md-3 text-right">
+                @Html.LabelFor(m => m.FirstName)
+            </div>
+            <div class="col-md-9">
+                @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.FirstName)
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-md-3 text-right">
+                @Html.LabelFor(m => m.MiddleName)
+            </div>
+            <div class="col-md-9">
+                @Html.TextBoxFor(m => m.MiddleName, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.MiddleName)
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-md-3 text-right">
+                @Html.LabelFor(m => m.LastName)
+            </div>
+            <div class="col-md-9">
+                @Html.TextBoxFor(m => m.LastName, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.LastName)
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-md-3 text-right">
+                @Html.LabelFor(m => m.PhoneNumber)
+            </div>
+            <div class="col-md-9">
+                @Html.TextBoxFor(m => m.PhoneNumber, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.PhoneNumber)
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-md-3 text-right">
+                @Html.LabelFor(m => m.PatientNumber)
+            </div>
+            <div class="col-md-9">
+                @Html.TextBoxFor(m => m.PatientNumber, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.PatientNumber)
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-md-3 text-right">
+                @Html.LabelFor(m => m.Address)
+            </div>
+            <div class="col-md-9">
+                @Html.TextBoxFor(m => m.Address, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Address)
+            </div>
+        </div>
+        <br />
+        <div id="create-btns-container" class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <input type="submit" class="btn btn-primary pull-right" value="Добави пациент" />
+                <input type="reset" class="btn btn-danger pull-right" value="Изчисти" />
+            </div>
+        </div>
+    }
+</div>
